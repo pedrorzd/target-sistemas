@@ -1,35 +1,43 @@
-let number = -3; // inseirir numero para verificar se ele pertence a sequência de fibonacci
+let number = 8; // Inserir número para verificar se ele pertence à sequência de Fibonacci
 
-let posBinet;
-let raizQuadrada;
 let quadradoPerfeito = false;
+let binetPositivo;
+let binetNegativo;
+let a = 0;
+let b = 1;
 
-// Função para verificar se um número é quadrado perfeito
-function verificarQuadradoPerfeito(valor) {
-  raizQuadrada = Math.sqrt(valor);
-  quadradoPerfeito = Number.isInteger(raizQuadrada); // Verifica se a raiz quadrada é um inteiro
-  return quadradoPerfeito;
+// Função para aplicar a equação de Binet
+function equacaoBinet(number) {
+  binetPositivo = 5 * number ** 2 + 4;
+  binetNegativo = 5 * number ** 2 - 4;
 }
 
-// Função para aplicar a equação de Binet e verificar se o número é Fibonacci
-function equacaoBinet(num) {
-  let binet1 = 5 * num ** 2 + 4;
-  let binet2 = 5 * num ** 2 - 4;
-
-  // Verifica se algum dos resultados de Binet é um quadrado perfeito
-  if (verificarQuadradoPerfeito(binet1) || verificarQuadradoPerfeito(binet2)) {
+// Função para verificar se um número é quadrado perfeito
+function calculoQuadradoPerfeito(binetPositivo, binetNegativo) {
+  // Verifica se a raiz quadrada é um inteiro
+  if (
+    Number.isInteger(Math.sqrt(binetPositivo)) == true ||
+    Number.isInteger(Math.sqrt(binetNegativo)) == true
+  ) {
     return true;
+  } else {
+    return false;
   }
-  return false;
 }
 
 // Validação do número fornecido
-if (number < 0)
-  return "Números negativos não fazem parte da sequência de Fibonacci";
-else if (number == 0 || number == 1) {
+if (number < 0) {
+  console.log("Números negativos não pertencem à sequência de Fibonacci");
+} else if (number == 0 || number == 1) {
   console.log("O número pertence à sequência de Fibonacci");
-} else if (equacaoBinet(number)) {
+} else if (true) {
   console.log("O número pertence à sequência de Fibonacci");
+  for (let i = 0; i <= ; ++i) {
+    console.log(a);
+    let temp = a + b;
+    a = b;
+    b = temp;
+  }
 } else {
   console.log("O número não pertence à sequência de Fibonacci");
 }
