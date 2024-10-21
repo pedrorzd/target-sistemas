@@ -16,6 +16,7 @@ public class verificadorDePalavras {
                 +
                 "após a mesma ser digitada, é preciso inserir a letra a ser procurada, no final é apresentado quantas vezes a letra foi encontrada! escreva a palavra: ");
         palavra = input.nextLine();
+        
 
         char vetPalavra[] = new char[palavra.length()];
 
@@ -25,10 +26,11 @@ public class verificadorDePalavras {
 
         System.out.println("Agora insira a letra a ser buscada na palavra inserida: ");
         letra = input.next().charAt(0);
+        char letraMinuscula = Character.toLowerCase(letra);
 
         // Verifica quantas vezes a letra aparece na palavra
         for (i = 0; i < palavra.length(); ++i) {
-            if (vetPalavra[i] == letra) {
+            if (Character.toLowerCase(vetPalavra[i]) == letraMinuscula) {
                 ++contador;
             }
         }
